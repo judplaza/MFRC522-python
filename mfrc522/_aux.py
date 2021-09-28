@@ -1,5 +1,5 @@
 #!/usr/bin/env python
-
+import os
 import RPi.GPIO as GPIO
 from mfrc522 import SimpleMFRC522
 class Rfid_rc522:
