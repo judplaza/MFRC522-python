@@ -19,7 +19,7 @@ class SimpleMFRC522:
           id, text = self.read_no_block()
       return id, text
 
-  def read_id(self):
+  def read_uid(self):
     id = self.read_id_no_block()
     while not id:
       id = self.read_id_no_block()
