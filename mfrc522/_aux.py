@@ -9,7 +9,7 @@ class Rfid_rc522:
                 uid_hex=hex(uid).upper()
                 return uid_hex
 if __name__ == "__main__":
-        init()
+        __init__()
         try:
                 rf=Rfid_rc522()
                 uid = rf.scan_uid()
