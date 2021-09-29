@@ -85,13 +85,12 @@ class SimpleMFRC522:
       
   def uid_to_num(self, uid):
       n = 0
-      for i in range(0, 5): 
+      for i in range(0, 4): #change from "range(0,5)" to "range(0,4)" to avoid cutting last 4 numerals in hexadecimal
           n = n * 256 + uid[i]            
       return n
     
   def from_dec_to_hex8(self, id):
-      uid_real = hex(id).upper().strip("0X") #the .strip is to delete the hex identification on screen
-      uid_real = uid_real.rstrip(uid_real[-2])
+      uid_real = hex(id).upper().strip("0X") #the .strip is to delete the hex identification on screen      
       uid_real = uid_real.zfill(8) #if uid_real has only 7 num, we add a "0" at the begining
       return uid_real
       
