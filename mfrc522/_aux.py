@@ -3,17 +3,17 @@ import os
 import RPi.GPIO as GPIO
 from mfrc522 import SimpleMFRC522
 class Rfid_rc522:
-        def scan_uid(self):
-                reader = SimpleMFRC522()
-                uid=reader.read_uid()
-                uid_hex=hex(uid).upper()
-                return uid_hex
+        def __init__(self):
+                self.reader = SimpleMFRC522()
+        def read_uid(self):
+                id = self.reader.read_id()
+                return (hex(id).upper()[2:10])
 if __name__ == "__main__":
         __init__()
         try:
                 rf=Rfid_rc522()
                 uid = rf.scan_uid()
-                print(uid.strip("0X"))
+                print(uid)
         finally:
                 GPIO.cleanup()
                 
