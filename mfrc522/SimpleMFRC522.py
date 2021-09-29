@@ -85,6 +85,8 @@ class SimpleMFRC522:
       
   def uid_to_num(self, uid):
       n = 0
-      for i in range(0, 4): #instead of "range(0,5)" -> "range(0,4)"
+      for i in range(0, 5):
           n = n * 256 + uid[i]
+      ## This Code translate the Decimal to hex and filled up with the vanish Zero
+      print((hex(uid[0])[2:].zfill(2)),(hex(uid[1])[2:].zfill(2)),(hex(uid[2])[2:].zfill(2)),(hex(uid[3])[2:].zfill(2)))
       return n
