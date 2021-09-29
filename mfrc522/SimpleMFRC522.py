@@ -86,5 +86,6 @@ class SimpleMFRC522:
   def uid_to_num(self, uid):
       n = 0
       for i in range(0, 4): #change
+          print(uid[i] , " ") #prueba
           n = n * 256 + uid[i]            
       return n
