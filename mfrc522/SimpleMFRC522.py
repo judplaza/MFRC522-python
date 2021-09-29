@@ -19,7 +19,7 @@ class SimpleMFRC522:
           id, text = self.read_no_block()
       return id, text
 
-  def read_uid(self):
+  def read_id(self):
     id = self.read_id_no_block()
     while not id:
       id = self.read_id_no_block()
@@ -85,7 +85,6 @@ class SimpleMFRC522:
       
   def uid_to_num(self, uid):
       n = 0
-      for i in range(0, 4): #change
-          print(uid[i] , " ") #prueba
+      for i in range(0, 5):        
           n = n * 256 + uid[i]            
       return n
