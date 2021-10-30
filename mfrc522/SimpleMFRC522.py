@@ -90,7 +90,8 @@ class SimpleMFRC522:
       return n
     
   def from_dec_to_hex8(self, id):
-      uid_real = hex(id).upper().strip("0X") #the .strip is to delete the hex identification on screen      
-      uid_real = uid_real.zfill(8) #if uid_real has only 7 num, we add a "0" at the begining
+      #uid_real = hex(id).upper().strip("0X") #the .strip is to delete the hex identification on screen      
+      #uid_real = uid_real.zfill(8) #if uid_real has only 7 num, we add a "0" at the begining
+      uid_real = format(id, 'x').upper().zfill(8);
       return uid_real
       
